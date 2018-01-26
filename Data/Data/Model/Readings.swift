@@ -12,7 +12,7 @@ public struct Readings {
     public var type : String
     public var value : Double
     
-    init(type:String,value:Double) {
+    public init(type:String,value:Double) {
         self.type = type
         self.value = value
     }
