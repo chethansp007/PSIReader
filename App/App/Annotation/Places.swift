@@ -30,8 +30,9 @@ import  Data
             let title = region.name
             
             var str = ""
-            for item in region.items {
-                str = str.appending("\(item.type) - \(item.value)\n")
+            for item in region.items where item.type.contains("psi_") {
+                let sub = NSLocalizedString("24 hour PSI", comment: "")
+                str = str.appending("\(sub) - \(item.value)")
             }
             let place = Place(title: title, subtitle: str, coordinate: CLLocationCoordinate2DMake(region.latitude, region.longitude))
             place.items = region.items
