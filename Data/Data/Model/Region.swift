@@ -36,7 +36,6 @@ public class RegionBuilder {
             if let entries = values as? [String:Any] {
                 
                 for (region,value) in entries {
-                    print(value)
                     
                     if let region = self.regions.filter({ $0.name == region}).first,
                         let val = value as? Double {

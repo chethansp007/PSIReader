@@ -24,12 +24,25 @@ class ViewController: UIViewController {
         requestLocationAccess()
         mapView?.delegate = self
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refresh))
         self.title = NSLocalizedString("PSI Alert", comment: "")
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-       
+       loadDateOnMap()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    @objc func refresh()  {
+        loadDateOnMap()
+    }
+
+    func loadDateOnMap()  {
         let progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
         
         APIInterface.shared.getPSIData { (region, error) in
@@ -40,12 +53,6 @@ class ViewController: UIViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
     func requestLocationAccess() {
         let status = CLLocationManager.authorizationStatus()
         
@@ -54,7 +61,7 @@ class ViewController: UIViewController {
             return
             
         case .denied, .restricted:
-            print("location access denied")
+            debugPrint("location access denied")
             
         default:
             locationManager.requestWhenInUseAuthorization()
@@ -93,7 +100,6 @@ extension ViewController: MKMapViewDelegate {
         detailController.items = placeAnnotation.items
         detailController.headerString = placeAnnotation.title
         self.navigationController?.pushViewController(detailController, animated: true)
-        print(annotation)
     }
 }
 
