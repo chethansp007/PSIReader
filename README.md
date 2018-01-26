@@ -1,6 +1,6 @@
 # PSIReader
 
- PSIReader app shows the PSI level and other reading of different parts of Singapore.
+ PSIReader app shows the PSI level and other readings in different parts of Singapore.
    
  The app shows the different visual way of representation of the annotations in the Map view based on the PSI index.
    
