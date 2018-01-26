@@ -14,6 +14,7 @@ import  Data
     var title: String?
     var subtitle: String?
     var coordinate: CLLocationCoordinate2D
+    var items : [Items] = []
     
     init(title: String?, subtitle: String?, coordinate: CLLocationCoordinate2D) {
         self.title = title
@@ -27,7 +28,13 @@ import  Data
         
         for region in regions {
             let title = region.name
-            let place = Place(title: title, subtitle: "", coordinate: CLLocationCoordinate2DMake(region.latitude, region.longitude))
+            
+            var str = ""
+            for item in region.items {
+                str = str.appending("\(item.type) - \(item.value)\n")
+            }
+            let place = Place(title: title, subtitle: str, coordinate: CLLocationCoordinate2DMake(region.latitude, region.longitude))
+            place.items = region.items
             places.append(place)
         }
         

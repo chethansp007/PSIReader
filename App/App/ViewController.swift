@@ -19,23 +19,27 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         requestLocationAccess()
-        
         mapView?.delegate = self
         
-        let progressView = MBProgressHUD(view: self.view)
-        progressView.show(animated:true)
+        self.title = NSLocalizedString("PSI Alert", comment: "")
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+       
+        let progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
         
         APIInterface.shared.getPSIData { (region, error) in
-            progressView.hide(animated:true)
+            progressHUD.hide(animated:true)
             
             let annotations = Place.getPlaces(regions: region)
             self.mapView?.addAnnotations(annotations)
-            
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -68,8 +72,28 @@ extension ViewController: MKMapViewDelegate {
         else {
             let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView") ?? MKAnnotationView()
             annotationView.image = UIImage(named: "place icon")
+            annotationView.rightCalloutAccessoryView = UIButton.init(type: UIButtonType.detailDisclosure)
+            annotationView.canShowCallout = true
             return annotationView
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl)
+    {
+        guard let annotation = view.annotation else
+        {
+            return
+        }
+        
+        view.canShowCallout = false
+        
+        guard let detailController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController, let placeAnnotation = annotation as? Place else  {
+            return
+        }
+        detailController.items = placeAnnotation.items
+        detailController.headerString = placeAnnotation.title
+        self.navigationController?.pushViewController(detailController, animated: true)
+        print(annotation)
     }
 }
 

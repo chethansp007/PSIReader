@@ -76,8 +76,8 @@ public class Region {
 
 
 public struct Items {
-    var type : String
-    var value : Double
+    public var type : String
+    public var value : Double
     
     init(type:String,value:Double) {
         self.type = type
