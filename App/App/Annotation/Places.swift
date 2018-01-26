@@ -14,6 +14,7 @@ import  Data
     var title: String?
     var subtitle: String?
     var coordinate: CLLocationCoordinate2D
+    var type : Readings.AlertType = .none
     var items : [Readings] = []
     
     init(title: String?, subtitle: String?, coordinate: CLLocationCoordinate2D) {
@@ -30,12 +31,16 @@ import  Data
             let title = region.name
             
             var str = ""
+            var type : Readings.AlertType = .none
             for item in region.items where item.type.contains("psi_") {
+                type = item.alertType()
                 let sub = NSLocalizedString("24 hour PSI", comment: "")
                 str = str.appending("\(sub) - \(item.value)")
             }
+            
             let place = Place(title: title, subtitle: str, coordinate: CLLocationCoordinate2DMake(region.latitude, region.longitude))
             place.items = region.items
+            place.type = type
             places.append(place)
         }
         

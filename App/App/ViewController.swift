@@ -79,7 +79,10 @@ extension ViewController: MKMapViewDelegate {
         }
         else {
             let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView") ?? MKAnnotationView()
-            annotationView.image = UIImage(named: "place icon")
+            
+            if let placeAnnotation = annotation as? Place {
+                annotationView.image = placeAnnotation.type.img //UIImage(named: "place icon")
+            }
             annotationView.rightCalloutAccessoryView = UIButton.init(type: UIButtonType.detailDisclosure)
             annotationView.canShowCallout = true
             return annotationView
