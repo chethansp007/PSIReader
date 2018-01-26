@@ -26,11 +26,11 @@ class ViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refresh))
         self.title = NSLocalizedString("PSI Alert", comment: "")
+        loadDateOnMap()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-       loadDateOnMap()
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,6 +43,11 @@ class ViewController: UIViewController {
     }
 
     func loadDateOnMap()  {
+        
+        for currentAnnotation in self.mapView.annotations where currentAnnotation is Place {
+            self.mapView.deselectAnnotation(currentAnnotation, animated: true)
+        }
+
         let progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
         
         APIInterface.shared.getPSIData { (region, error) in
@@ -81,8 +86,9 @@ extension ViewController: MKMapViewDelegate {
             let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView") ?? MKAnnotationView()
             
             if let placeAnnotation = annotation as? Place {
-                annotationView.image = placeAnnotation.type.img //UIImage(named: "place icon")
+                annotationView.image = placeAnnotation.type.img
             }
+            
             annotationView.rightCalloutAccessoryView = UIButton.init(type: UIButtonType.detailDisclosure)
             annotationView.canShowCallout = true
             return annotationView
@@ -96,7 +102,7 @@ extension ViewController: MKMapViewDelegate {
             return
         }
         
-        view.canShowCallout = false
+        mapView.deselectAnnotation(annotation, animated: true)
         
         guard let detailController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController, let placeAnnotation = annotation as? Place else  {
             return

@@ -36,6 +36,23 @@ public extension Readings {
                 return #imageLiteral(resourceName: "Normal")
             }
         }
+        
+        public var description : String {
+            switch self {
+            case .normal:
+                return NSLocalizedString("Normal", comment: "")
+            case .moderate:
+                return NSLocalizedString("Moderate", comment: "")
+            case .unhealthy:
+                return NSLocalizedString("Unhealthy", comment: "")
+            case .veryunheathy:
+                return NSLocalizedString("Very Unheathy", comment: "")
+            case .hazadous:
+                return NSLocalizedString("hazardous", comment: "")
+            default:
+                return ""
+            }
+        }
     }
     
     func alertType() -> AlertType {

@@ -18,7 +18,6 @@ public class PSIAPIService: APIServiceProtocol {
     
     // MARK: NetworkServiceProtocol
     func url() -> String {
-        
         let dateTime = Date().toString(dateFormat: "yyyy-MM-dd'T'HH:mm:ss").addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         let date = Date().toString(dateFormat: "yyyy-MM-dd")
         let url = "\(Constants.URLConfig.domain)/\(Constants.URLConfig.version)/environment/psi?date_time=\(dateTime)&date=\(date)"

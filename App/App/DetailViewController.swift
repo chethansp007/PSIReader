@@ -20,6 +20,7 @@ class DetailViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.title = NSLocalizedString("All Readings", comment: "")
         self.tableView.reloadData()
     }
 }
@@ -29,7 +30,7 @@ extension DetailViewController {
     
     override func tableView(_ tableView: UITableView,
                    titleForHeaderInSection section: Int) -> String?{
-        return headerString
+        return headerString?.firstUppercased
     }
     
     override func tableView(_ tableView: UITableView,

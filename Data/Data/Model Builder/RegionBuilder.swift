@@ -13,7 +13,6 @@ public class RegionBuilder {
     
     public var regions: [Region] = []
     
-    
     init(dict:[String:Any])   {
         
         guard let region = dict["region_metadata"] as? [[String:Any]] else {

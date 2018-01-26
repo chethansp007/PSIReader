@@ -35,10 +35,10 @@ import  Data
             for item in region.items where item.type.contains("psi_") {
                 type = item.alertType()
                 let sub = NSLocalizedString("24 hour PSI", comment: "")
-                str = str.appending("\(sub) - \(item.value)")
+                str = str.appending("\(sub) - \(item.value) - \(type.description)")
             }
             
-            let place = Place(title: title, subtitle: str, coordinate: CLLocationCoordinate2DMake(region.latitude, region.longitude))
+            let place = Place(title: title.firstUppercased, subtitle: str, coordinate: CLLocationCoordinate2DMake(region.latitude, region.longitude))
             place.items = region.items
             place.type = type
             places.append(place)
