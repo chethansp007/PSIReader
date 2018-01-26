@@ -21,5 +21,11 @@ PSIReader workspace comprises of 3 module.
 
 Each module should have there own unit tests. And the app will run all the unit test when building and distributing through CI.
 
+## UI
 
+![alt text](https://github.com/chethansp007/PSIReader/blob/Develop/ScreenShots/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-01-27%20at%2004.15.44.png)
+
+![alt text](https://github.com/chethansp007/PSIReader/blob/Develop/ScreenShots/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-01-27%20at%2004.16.01.png)
+
+![alt text](https://github.com/chethansp007/PSIReader/blob/Develop/ScreenShots/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-01-27%20at%2004.16.06.png)
 
