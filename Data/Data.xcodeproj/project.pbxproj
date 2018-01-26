@@ -83,6 +83,16 @@
 			path = "Model Builder";
 			sourceTree = "<group>";
 		};
+		D7352E9B201BB89000F1CCE2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D7352E8A201BAA7000F1CCE2 /* APIServiceProtocol.swift */,
+				D7352E8D201BAAFD00F1CCE2 /* NetworkSession.swift */,
+				D7C034FD201AD85D00196A20 /* PSIAPIService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		D7583E6E20177AFE00B8DBFB = {
 			isa = PBXGroup;
 			children = (
@@ -105,14 +115,12 @@
 			isa = PBXGroup;
 			children = (
 				D7C034FF201AD89100196A20 /* Constants.swift */,
-				D7352E8A201BAA7000F1CCE2 /* APIServiceProtocol.swift */,
 				D7352E8C201BAA8800F1CCE2 /* Extension */,
 				D7352E8F201BAB3B00F1CCE2 /* Model Builder */,
 				D76BA639201B7A3C00244808 /* Model */,
+				D7352E9B201BB89000F1CCE2 /* Network */,
 				D7583E7B20177AFE00B8DBFB /* Data.h */,
 				D7583E7C20177AFE00B8DBFB /* Info.plist */,
-				D7352E8D201BAAFD00F1CCE2 /* NetworkSession.swift */,
-				D7C034FD201AD85D00196A20 /* PSIAPIService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";

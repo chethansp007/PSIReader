@@ -92,10 +92,10 @@
 		D7583EA720177B7F00B8DBFB /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D7583EC720177C2F00B8DBFB /* APIInterface.swift */,
 				D7352E96201BB51D00F1CCE2 /* BuisnessLogic  */,
 				D7583EA820177B7F00B8DBFB /* Domain.h */,
 				D7583EA920177B7F00B8DBFB /* Info.plist */,
-				D7583EC720177C2F00B8DBFB /* APIInterface.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
