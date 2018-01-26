@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7352E8B201BAA7000F1CCE2 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7352E8A201BAA7000F1CCE2 /* APIServiceProtocol.swift */; };
+		D7352E8E201BAAFD00F1CCE2 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7352E8D201BAAFD00F1CCE2 /* NetworkSession.swift */; };
+		D7352E91201BAB5200F1CCE2 /* RegionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7352E90201BAB5200F1CCE2 /* RegionBuilder.swift */; };
+		D7352E93201BABD600F1CCE2 /* Readings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7352E92201BABD600F1CCE2 /* Readings.swift */; };
 		D7583E8220177AFE00B8DBFB /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7583E7820177AFE00B8DBFB /* Data.framework */; };
 		D7583E8720177AFE00B8DBFB /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7583E8620177AFE00B8DBFB /* DataTests.swift */; };
 		D7583E8920177AFE00B8DBFB /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = D7583E7B20177AFE00B8DBFB /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D7583EC620177BC400B8DBFB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7583EC520177BC400B8DBFB /* NetworkService.swift */; };
 		D76BA63B201B7A5A00244808 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BA63A201B7A5A00244808 /* Region.swift */; };
 		D7C034FE201AD85D00196A20 /* PSIAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C034FD201AD85D00196A20 /* PSIAPIService.swift */; };
 		D7C03500201AD89100196A20 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C034FF201AD89100196A20 /* Constants.swift */; };
@@ -29,13 +32,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D7352E8A201BAA7000F1CCE2 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
+		D7352E8D201BAAFD00F1CCE2 /* NetworkSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		D7352E90201BAB5200F1CCE2 /* RegionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionBuilder.swift; sourceTree = "<group>"; };
+		D7352E92201BABD600F1CCE2 /* Readings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readings.swift; sourceTree = "<group>"; };
 		D7583E7820177AFE00B8DBFB /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7583E7B20177AFE00B8DBFB /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		D7583E7C20177AFE00B8DBFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7583E8120177AFE00B8DBFB /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7583E8620177AFE00B8DBFB /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		D7583E8820177AFE00B8DBFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7583EC520177BC400B8DBFB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D76BA63A201B7A5A00244808 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		D7C034FD201AD85D00196A20 /* PSIAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIAPIService.swift; sourceTree = "<group>"; };
 		D7C034FF201AD89100196A20 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -61,6 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D7352E8C201BAA8800F1CCE2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D7C03501201ADAF800196A20 /* Date+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D7352E8F201BAB3B00F1CCE2 /* Model Builder */ = {
+			isa = PBXGroup;
+			children = (
+				D7352E90201BAB5200F1CCE2 /* RegionBuilder.swift */,
+			);
+			path = "Model Builder";
+			sourceTree = "<group>";
+		};
 		D7583E6E20177AFE00B8DBFB = {
 			isa = PBXGroup;
 			children = (
@@ -82,13 +104,15 @@
 		D7583E7A20177AFE00B8DBFB /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D7C034FF201AD89100196A20 /* Constants.swift */,
+				D7352E8A201BAA7000F1CCE2 /* APIServiceProtocol.swift */,
+				D7352E8C201BAA8800F1CCE2 /* Extension */,
+				D7352E8F201BAB3B00F1CCE2 /* Model Builder */,
 				D76BA639201B7A3C00244808 /* Model */,
 				D7583E7B20177AFE00B8DBFB /* Data.h */,
 				D7583E7C20177AFE00B8DBFB /* Info.plist */,
-				D7C03501201ADAF800196A20 /* Date+Extension.swift */,
-				D7583EC520177BC400B8DBFB /* NetworkService.swift */,
+				D7352E8D201BAAFD00F1CCE2 /* NetworkSession.swift */,
 				D7C034FD201AD85D00196A20 /* PSIAPIService.swift */,
-				D7C034FF201AD89100196A20 /* Constants.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -106,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				D76BA63A201B7A5A00244808 /* Region.swift */,
+				D7352E92201BABD600F1CCE2 /* Readings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,10 +246,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7583EC620177BC400B8DBFB /* NetworkService.swift in Sources */,
+				D7352E91201BAB5200F1CCE2 /* RegionBuilder.swift in Sources */,
+				D7352E8B201BAA7000F1CCE2 /* APIServiceProtocol.swift in Sources */,
 				D7C03502201ADAF800196A20 /* Date+Extension.swift in Sources */,
 				D7C034FE201AD85D00196A20 /* PSIAPIService.swift in Sources */,
 				D76BA63B201B7A5A00244808 /* Region.swift in Sources */,
+				D7352E8E201BAAFD00F1CCE2 /* NetworkSession.swift in Sources */,
+				D7352E93201BABD600F1CCE2 /* Readings.swift in Sources */,
 				D7C03500201AD89100196A20 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

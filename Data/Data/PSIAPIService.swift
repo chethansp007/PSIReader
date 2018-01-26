@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class PSIAPIService: NetworkServiceProtocol {
+public class PSIAPIService: APIServiceProtocol {
     
     let date : Date
     
@@ -16,7 +16,7 @@ public class PSIAPIService: NetworkServiceProtocol {
         self.date = date
     }
     
-    //Mark:NetworkServiceProtocol
+    // MARK: NetworkServiceProtocol
     func url() -> String {
         
         let dateTime = Date().toString(dateFormat: "yyyy-MM-dd'T'HH:mm:ss").addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
@@ -42,14 +42,14 @@ public class PSIAPIService: NetworkServiceProtocol {
         
     }
     
-    //Mark: request
+    //MARK: -
     func parse(data:[String:Any], response:URLResponse?) -> RegionBuilder  {
         return RegionBuilder(dict: data)
     }
     
     public func getPSIData(complition:@escaping(_ data:RegionBuilder?,_ eror:Error?) -> Void) {
         
-        NetworkService.shared.performRequest(urlString: self.url(),
+        NetworkSession.shared.performRequest(urlString: self.url(),
                                              type: self.httpMethodType(),
                                              header: self.header(),
                                              body: self.body()) { (data, response, error) in

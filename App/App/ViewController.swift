@@ -53,6 +53,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //Mark:Location permission
     func requestLocationAccess() {
         let status = CLLocationManager.authorizationStatus()
         

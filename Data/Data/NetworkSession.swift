@@ -18,18 +18,9 @@ enum ErrorType : Error {
     case jsonDataNotFound
 }
 
-protocol NetworkServiceProtocol {
-    func url() ->  String
-    func httpMethodType() ->  String
-    func body() -> Data?
-    func apiName() -> String
-    func header() -> [String:String]
-}
-
-
- class NetworkService {
+ class NetworkSession {
     
-    static let shared = NetworkService()
+    static let shared = NetworkSession()
     
     func performRequest(urlString:String,
                         type:String,

@@ -11,7 +11,7 @@ import Data
 
 class DetailViewController: UITableViewController {
     
-    var items : [Items]?
+    var items : [Readings]?
     var headerString : String?
     
     override func viewDidLoad() {
@@ -24,6 +24,7 @@ class DetailViewController: UITableViewController {
     }
 }
 
+// MARK: UITableViewDataSource
 extension DetailViewController {
     
     override func tableView(_ tableView: UITableView,

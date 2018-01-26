@@ -77,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D7352E89201BA99700F1CCE2 /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				D7352E78201B8CDA00F1CCE2 /* Places.swift */,
+			);
+			path = Annotation;
+			sourceTree = "<group>";
+		};
 		D7583E422017789400B8DBFB = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +108,7 @@
 		D7583E4D2017789400B8DBFB /* App */ = {
 			isa = PBXGroup;
 			children = (
-				D7352E78201B8CDA00F1CCE2 /* Places.swift */,
+				D7352E89201BA99700F1CCE2 /* Annotation */,
 				D7583E4E2017789400B8DBFB /* AppDelegate.swift */,
 				D7583E502017789400B8DBFB /* ViewController.swift */,
 				D7352E7C201B9CEC00F1CCE2 /* DetailViewController.swift */,
