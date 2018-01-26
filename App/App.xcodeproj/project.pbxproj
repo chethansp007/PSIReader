@@ -10,10 +10,10 @@
 		5C885F251666620B7ED880AB /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469020F20BB125F142783DE7 /* Pods_App.framework */; };
 		8DBB86FD7DE2306DDB506E98 /* Pods_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D57E4A8B1CC187D11FAB25 /* Pods_AppTests.framework */; };
 		D7352E79201B8CDA00F1CCE2 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7352E78201B8CDA00F1CCE2 /* Places.swift */; };
+		D7352E7B201B971200F1CCE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7352E7A201B971200F1CCE2 /* Assets.xcassets */; };
 		D7583E4F2017789400B8DBFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7583E4E2017789400B8DBFB /* AppDelegate.swift */; };
 		D7583E512017789400B8DBFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7583E502017789400B8DBFB /* ViewController.swift */; };
 		D7583E542017789400B8DBFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7583E522017789400B8DBFB /* Main.storyboard */; };
-		D7583E562017789400B8DBFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7583E552017789400B8DBFB /* Assets.xcassets */; };
 		D7583E592017789400B8DBFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7583E572017789400B8DBFB /* LaunchScreen.storyboard */; };
 		D7583E642017789400B8DBFB /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7583E632017789400B8DBFB /* AppTests.swift */; };
 		D7583EC020177B9B00B8DBFB /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7583EC120177B9B00B8DBFB /* Domain.framework */; };
@@ -37,11 +37,11 @@
 		6F0B2C6BADC95BF83AA812FB /* Pods-AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTests/Pods-AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		C3D57E4A8B1CC187D11FAB25 /* Pods_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7352E78201B8CDA00F1CCE2 /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		D7352E7A201B971200F1CCE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7583E4B2017789400B8DBFB /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7583E4E2017789400B8DBFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7583E502017789400B8DBFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D7583E532017789400B8DBFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D7583E552017789400B8DBFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7583E582017789400B8DBFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7583E5A2017789400B8DBFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7583E5F2017789400B8DBFB /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,10 +97,10 @@
 				D7583E4E2017789400B8DBFB /* AppDelegate.swift */,
 				D7583E502017789400B8DBFB /* ViewController.swift */,
 				D7583E522017789400B8DBFB /* Main.storyboard */,
-				D7583E552017789400B8DBFB /* Assets.xcassets */,
 				D7583E572017789400B8DBFB /* LaunchScreen.storyboard */,
 				D7583E5A2017789400B8DBFB /* Info.plist */,
 				D7352E78201B8CDA00F1CCE2 /* Places.swift */,
+				D7352E7A201B971200F1CCE2 /* Assets.xcassets */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -225,7 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7583E592017789400B8DBFB /* LaunchScreen.storyboard in Resources */,
-				D7583E562017789400B8DBFB /* Assets.xcassets in Resources */,
+				D7352E7B201B971200F1CCE2 /* Assets.xcassets in Resources */,
 				D7583E542017789400B8DBFB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

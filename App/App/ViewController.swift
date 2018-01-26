@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import Domain
+import MBProgressHUD
 
 class ViewController: UIViewController {
 
@@ -20,8 +21,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         requestLocationAccess()
-
+        
+        mapView?.delegate = self
+        
+        let progressView = MBProgressHUD(view: self.view)
+        progressView.show(animated:true)
+        
         APIInterface.shared.getPSIData { (region, error) in
+            progressView.hide(animated:true)
+            
+            let annotations = Place.getPlaces(regions: region)
+            self.mapView?.addAnnotations(annotations)
             
         }
     }
@@ -46,11 +56,6 @@ class ViewController: UIViewController {
             locationManager.requestWhenInUseAuthorization()
         }
     }
-    
-    func addAnnotations() {
-        mapView?.delegate = self
-//        mapView?.addAnnotations(places)
-    }
 }
 
 
@@ -60,10 +65,9 @@ extension ViewController: MKMapViewDelegate {
         if annotation is MKUserLocation {
             return nil
         }
-            
         else {
             let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView") ?? MKAnnotationView()
-//            annotationView.image = UIImage(named: "place icon")
+            annotationView.image = UIImage(named: "place icon")
             return annotationView
         }
     }

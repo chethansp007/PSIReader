@@ -35,6 +35,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Used to show the accurate location of the user.</string>
+	<string>PSIAlert needs your location so that you can see it on a map.</string>
 </dict>
 </plist>
